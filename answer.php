@@ -7,9 +7,9 @@
       exit();
   }
 
-  $dsn = 'mysql:host=localhost;dbname=uskprogram;charset=utf8';
-  $user = 'usk';
-  $password = '1322';
+  $dsn = 'mysql:host=us-cdbr-east-02.cleardb.com;dbname=heroku_4aae764a6bba763;charset=utf8';
+  $user = 'b29e771eedb27c';
+  $password = '10698e23';
 
 
   
