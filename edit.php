@@ -13,7 +13,7 @@
     var_dump($language);
     var_dump($title);
     die();
-      header('Location: toppage.php');
+      header('Location: index.php');
       exit();
   }
   $dsn = 'mysql:host=localhost;dbname=uskprogram;charset=utf8';
@@ -39,7 +39,7 @@
         $stmt->bindParam(':id',$id,PDO::PARAM_STR);
 
         $stmt->execute();
-        header('Location: toppage.php');
+        header('Location: index.php');
         exit();
 
   } catch (PDOException $e){

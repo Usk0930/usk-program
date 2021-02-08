@@ -36,7 +36,7 @@ $row=$stmt->fetch();
 </head>
 <body>
  <div class="postscreen">
- <h1> <a href='toppage.php' class="name">USK's Way to Programer</a></h1>
+ <h1> <a href='index.php' class="name">USK's Way to Programer</a></h1>
   <form action="edit.php" method="post" enctype="multipart/form-data" class = 'form'>
    <p>TITLE:<input type='text' name='title' rows='1'value=<?php echo $row['title'] ?>></p>
    <p>LANGUAGE:

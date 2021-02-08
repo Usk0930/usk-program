@@ -18,7 +18,7 @@
   $answer = $_POST['answer'];
 
   if ($language == '' || $title == ''){
-      header('Location: toppage.php');
+      header('Location: index.php');
       exit();
   }
 
@@ -45,7 +45,7 @@
       $stmt->bindParam(':answer',$answer,PDO::PARAM_STR);
     $stmt->execute();
 
-    header('Location: toppage.php');
+    header('Location: index.php');
     exit();
   } catch (PDOException $e){
       exit('データベースに接続できませんでした'.$e->getMessage());

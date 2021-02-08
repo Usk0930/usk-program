@@ -57,7 +57,7 @@ try{
 </head>
 <body>
  <div class="postscreen">
-  <h1> <a href='toppage.php' class='name'>USK Programer Way</a></h1>
+  <h1> <a href='index.php' class='name'>USK Programer Way</a></h1>
   <h2>SEARCH RESULT</h2>
   <h3>TERM:<?php echo $search ?></h3>
   <h3><?php echo $count ?> posts</h3>

@@ -30,7 +30,7 @@ $row=$stmt->fetch();
 </head>
 <body>
  <div class="postscreen">
-  <h1> <a href='toppage.php' class ='name'>USK's Way to Programer</a></h1>
+  <h1> <a href='index.php' class ='name'>USK's Way to Programer</a></h1>
   <div class='show'>
   <h2><?php echo strtoupper($row['type']) . " : " . $row['title'] ?></h2>
   <p>LANGUAGE:<?php echo $row['language']?></p>

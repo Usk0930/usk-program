@@ -3,7 +3,7 @@
   $id=$_POST['id'];
 
   if ($answer == '' ){
-      header('Location: toppage.php');
+      header('Location: index.php');
       exit();
   }
 
@@ -23,7 +23,7 @@
       $stmt->bindParam(':id',$id,PDO::PARAM_STR);
       $stmt->execute();
       
-    header('Location: toppage.php');
+    header('Location: index.php');
     exit();
   } catch (PDOException $e){
       exit('データベースに接続できませんでした'.$e->getMessage());
