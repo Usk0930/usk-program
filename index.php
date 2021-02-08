@@ -13,7 +13,7 @@ require_once('sql.php');
 <body>
  <div class="postscreen">
  <img src='photo.jpg' class="photo">
-  <h1> <a href='toppage.php'  class="name">USK's Way to Programer</a></h1>
+  <h1> <a href='index.php'  class="name">USK's Way to Programer</a></h1>
   <h3>Total <?php echo $count ?> posts</h3>
   <form action="write.php" method="post" enctype="multipart/form-data" class='form'>
    <p>TITLE:<input type='text' name='title' rows='1'></p>
