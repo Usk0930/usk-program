@@ -48,7 +48,7 @@ $row=$stmt->fetch();
   <br>
 
   <?php if ($row['type'] == 'question'):?>
-  <h2>ANSWEr:</h2>
+  <h2>ANSWER:</h2>
    <?php if ($row['answer'] !== ''):?>
    <?php echo nl2br($row['answer']) ?> <?php endif; ?>
    <?php if ($row['answer'] == ''):?>
