@@ -12,7 +12,7 @@ require_once('sql.php');
 </head>
 <body>
  <div class="postscreen">
- <img src='photo.jpg' class="photo">
+ <img src='photo.jpg' class="photo">           
   <h1> <a href='index.php'  class="name">USK's Way to Programer</a></h1>
   <h3>Total <?php echo $count ?> posts</h3>
   <form action="write.php" method="post" enctype="multipart/form-data" class='form'>
@@ -42,35 +42,34 @@ require_once('sql.php');
   <h2>NEW</h2>
    <?php
    try{
-    $db = new PDO($dsn,$user,$password);
-    $db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
-    /*取得件数制限5件*/
-    $stmt = $db->prepare(
-      "SELECT * FROM pile ORDER BY id DESC LIMIT 3"
-    );
-    $stmt->execute();
-   } catch(PDOException $e){
-    echo "エラー:" . $e->getMessage();
-   }
+      $db = new PDO($dsn,$user,$password);
+      $db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
+      /*取得件数制限3件*/
+      $stmt = $db->prepare(
+      "SELECT * FROM pile ORDER BY id DESC LIMIT 3");
+      $stmt->execute();
+    } catch(PDOException $e){
+      echo "エラー:" . $e->getMessage();
+    }
    while ($row=$stmt->fetch()):
    ?>
    <p>
     <a href="show.php?id=<?php echo $row['id'] ?>"><?php echo $row['date'].'&nbsp;'. $row['title'] ?></a>
    </p>
    <?php
-    endwhile;
+   endwhile;
    ?>
    <br>
   
    <h2>TO_DO</h2>
    <?php 
    try{
-   $db = new PDO($dsn,$user,$password);
-   $db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
-   $stmt = $db->prepare(" SELECT * FROM pile WHERE type = 'todo' AND answer is null ");
-   $stmt->execute();
-   } catch(PDOException $e) {
-   echo "エラー:" . $e->getMessage();}
+     $db = new PDO($dsn,$user,$password);
+     $db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
+     $stmt = $db->prepare(" SELECT * FROM pile WHERE type = 'todo' AND answer is null ");
+     $stmt->execute();
+    } catch(PDOException $e) {
+       echo "エラー:" . $e->getMessage();}
    ?>
    <?php while ($row=$stmt->fetch()):?>
    <p>
@@ -82,13 +81,13 @@ require_once('sql.php');
 
   <h2>QUESTION</h2>
    <?php 
-   try{
-   $db = new PDO($dsn,$user,$password);
-   $db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
-   $stmt = $db->prepare(" SELECT * FROM pile WHERE type = 'question' AND answer is null ");
-   $stmt->execute();
-   } catch(PDOException $e) {
-   echo "エラー:" . $e->getMessage();}
+     try{
+       $db = new PDO($dsn,$user,$password);
+       $db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
+       $stmt = $db->prepare(" SELECT * FROM pile WHERE type = 'question' AND answer is null ");
+       $stmt->execute();
+      } catch(PDOException $e) {
+          echo "エラー:" . $e->getMessage();}
    ?>
    <?php while ($row=$stmt->fetch()):?>
    <p>
@@ -101,12 +100,12 @@ require_once('sql.php');
   <h2>PROGRESS</h2>
    <?php 
    try{
-   $db = new PDO($dsn,$user,$password);
-   $db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
-   $stmt = $db->prepare(" SELECT * FROM pile WHERE type = 'progress' OR answer is not null ");
-   $stmt->execute();
+     $db = new PDO($dsn,$user,$password);
+     $db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
+     $stmt = $db->prepare(" SELECT * FROM pile WHERE type = 'progress' OR answer is not null ");
+     $stmt->execute();
    } catch(PDOException $e) {
-   echo "エラー:" . $e->getMessage();}
+       echo "エラー:" . $e->getMessage();}
    ?>
    <?php while ($row=$stmt->fetch()):?>
    <p>
