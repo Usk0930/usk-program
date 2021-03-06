@@ -29,7 +29,6 @@ $row=$stmt->fetch();
  <link rel="stylesheet" href="style.css">
 </head>
 <body>
- <!-- <div class="postscreen"> -->
   <h1> <a href='index.php' class ='name'>USK's Way to Programer</a></h1>
   <div class='show'>
    <h2><?php echo strtoupper($row['type']) . " : " . $row['title'] ?></h2>
@@ -44,7 +43,7 @@ $row=$stmt->fetch();
    <p><img src=<?php echo $row['img'] ?>>
    <p>MEMO:</p>
    <p><?php echo nl2br(htmlspecialchars($row['memo'], ENT_QUOTES, 'UTF-8')) ?> <?php endif; ?></p>
- </div> 
+  </div> 
   <br>
 
   <?php if ($row['type'] == 'question'):?>
