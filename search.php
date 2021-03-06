@@ -26,33 +26,6 @@ try{
  <meta chaeset = "utf-8">
  <title>USK Programer Way</title>
  <link rel="" rel="stylesheet" type="text/css">
- <style>
-  body{
-    text-align: center
-  }
-
-  .name{
-    height: 50px;
-    width: 900px;
-    font-size: 60px;     
-    color :black;
-    text-decoration:none;
-  }
-  
-  .form{
-    width: 80%;
-    margin-left: auto;
-	  margin-right: auto;
-    background-color: #EEEEEE;
-    border: solid 1px black
-  }
-
-  .memo{
-    position:relative;
-    right: 285px
-  }
-
- </style>
 </head>
 <body>
  <div class="postscreen">

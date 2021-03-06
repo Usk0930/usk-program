@@ -29,7 +29,7 @@ require_once('sql.php');
     <textarea name="tag3" rows='1'>#</textarea></p>
    <p>REFERENCE:<input type="file" name="img"></p>
    <p class = 'memo'>MEMO:</p>
-   <p><textarea name="memo" cols="90" rows="15" maxlength="500" wrap=”hard”></textarea></p>
+   <p><textarea name="memo" cols="90" rows="15" maxlength="500" wrap=”hard” class="textarea"></textarea></p>
    <p>TYPE: <input type="radio" name="type" value="todo">TO_DO
     <input type="radio" name="type" value="question"> QUESTION
     <input type="radio" name="type" value="progress">PROGRESS

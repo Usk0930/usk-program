@@ -50,7 +50,7 @@ $row=$stmt->fetch();
     <textarea name="tag2" rows='1'><?php echo $row['tag2'] ;?></textarea>
     <textarea name="tag3" rows='1'><?php echo $row['tag3'] ; ?></textarea></p>
    <p>REFERENCE:<input type="file" name="img"></p>
-   <p>MEMO:<textarea name="memo" cols="90" rows="15" maxlength="500" wrap=”hard”><?php echo $row['memo'] ?></textarea></p>
+   <p>MEMO:<textarea name="memo" cols="90" rows="15" maxlength="500" wrap=”hard”  class="textarea"><?php echo $row['memo'] ?></textarea></p>
    <p>TYPE:
      <input type="radio" name="type" value="todo" <?php if($row['type']=='todo'){echo 'checked';}?>> To Do
      <input type="radio" name="type" value="question" <?php if($row['type']=='question'){echo 'checked';}?>> Question
