@@ -34,7 +34,7 @@ $row=$stmt->fetch();
   <div class='show'>
   <h2><?php echo strtoupper($row['type']) . " : " . $row['title'] ?></h2>
   <p>LANGUAGE:<?php echo $row['language']?></p>
-  <?php if ($row['tag1'] !== '#'):?>
+  <p><?php if ($row['tag1'] !== '#'):?>
    TAG:<?php echo $row['tag1'] ?> <?php endif; ?>
    <?php if ($row['tag2'] !== '#'):?>
     &nbsp<?php echo $row['tag2'] ?> <?php endif; ?>
@@ -43,7 +43,7 @@ $row=$stmt->fetch();
   <?php if ($row['memo'] !== ''):?>
   <p><img src=<?php echo $row['img'] ?>>
   <p>MEMO:</p>
-  <p><?php echo nl2br($row['memo']) ?> <?php endif; ?></p>
+  <p><?php echo nl2br(htmlspecialchars($row['memo'], ENT_QUOTES, 'UTF-8')) ?> <?php endif; ?></p>
  </div> 
   <br>
 
