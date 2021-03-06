@@ -50,7 +50,7 @@ $row=$stmt->fetch();
   <?php if ($row['type'] == 'question'):?>
   <h2>ANSWER:</h2>
    <?php if ($row['answer'] !== ''):?>
-   <?php echo nl2br($row['answer']) ?> <?php endif; ?>
+   <?php echo nl2br(htmlspecialchars($row['answer'], ENT_QUOTES, 'UTF-8')) ?> <?php endif; ?>
    <?php if ($row['answer'] == ''):?>
    <form action="answer.php" method="post" enctype="multipart/form-data">
     <p><textarea name="answer" cols="90" rows="15" maxlength="500" wrap=”hard”></textarea></p>
