@@ -29,21 +29,21 @@ $row=$stmt->fetch();
  <link rel="stylesheet" href="style.css">
 </head>
 <body>
- <div class="postscreen">
+ <!-- <div class="postscreen"> -->
   <h1> <a href='index.php' class ='name'>USK's Way to Programer</a></h1>
   <div class='show'>
-  <h2><?php echo strtoupper($row['type']) . " : " . $row['title'] ?></h2>
-  <p>LANGUAGE:<?php echo $row['language']?></p>
-  <p><?php if ($row['tag1'] !== '#'):?>
-   TAG:<?php echo $row['tag1'] ?> <?php endif; ?>
-   <?php if ($row['tag2'] !== '#'):?>
-    &nbsp<?php echo $row['tag2'] ?> <?php endif; ?>
-   <?php if ($row['tag3'] !== '#'):?>
-    &nbsp<?php echo $row['tag3'] ?> <?php endif; ?></p> 
-  <?php if ($row['memo'] !== ''):?>
-  <p><img src=<?php echo $row['img'] ?>>
-  <p>MEMO:</p>
-  <p><?php echo nl2br(htmlspecialchars($row['memo'], ENT_QUOTES, 'UTF-8')) ?> <?php endif; ?></p>
+   <h2><?php echo strtoupper($row['type']) . " : " . $row['title'] ?></h2>
+   <p>LANGUAGE:<?php echo $row['language']?></p>
+   <p><?php if ($row['tag1'] !== '#'):?>
+    TAG:<?php echo $row['tag1'] ?> <?php endif; ?>
+    <?php if ($row['tag2'] !== '#'):?>
+     &nbsp<?php echo $row['tag2'] ?> <?php endif; ?>
+    <?php if ($row['tag3'] !== '#'):?>
+     &nbsp<?php echo $row['tag3'] ?> <?php endif; ?></p> 
+   <?php if ($row['memo'] !== ''):?>
+   <p><img src=<?php echo $row['img'] ?>>
+   <p>MEMO:</p>
+   <p><?php echo nl2br(htmlspecialchars($row['memo'], ENT_QUOTES, 'UTF-8')) ?> <?php endif; ?></p>
  </div> 
   <br>
 
