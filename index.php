@@ -30,10 +30,10 @@ require_once('sql.php');
    <p>REFERENCE:<input type="file" name="img"></p>
    <p class ="memo">MEMO:</p>
    <p class="textarea"><textarea name="memo" rows="15"  cols="90" maxlength="500" wrap=”hard”></textarea></p>
-   <p>TYPE: <input type="radio" name="type" value="todo">TO_DO
-    <input type="radio" name="type" value="question"> QUESTION
-    <input type="radio" name="type" value="progress">PROGRESS
-    <input type="radio" name="type" value="test"> TEST</p>
+   <p>CATEGORY: <input type="radio" name="category" value="todo">TO_DO
+    <input type="radio" name="category" value="question"> QUESTION
+    <input type="radio" name="category" value="progress">PROGRESS
+    <input type="radio" name="category" value="test"> TEST</p>
    <p><input type='password' name="pass" placeholder='pass' autocomplete="off"></textarea></p>
    <p><input type="submit" value="POST"></p>
   </form>
@@ -66,7 +66,7 @@ require_once('sql.php');
    try{
      $db = new PDO($dsn,$user,$password);
      $db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
-     $stmt = $db->prepare(" SELECT * FROM pile WHERE type = 'todo' AND answer is null ");
+     $stmt = $db->prepare(" SELECT * FROM pile WHERE category = 'todo' AND answer is null ");
      $stmt->execute();
     } catch(PDOException $e) {
        echo "エラー:" . $e->getMessage();}
@@ -84,7 +84,7 @@ require_once('sql.php');
      try{
        $db = new PDO($dsn,$user,$password);
        $db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
-       $stmt = $db->prepare(" SELECT * FROM pile WHERE type = 'question' AND answer is null ");
+       $stmt = $db->prepare(" SELECT * FROM pile WHERE category = 'question' AND answer is null ");
        $stmt->execute();
       } catch(PDOException $e) {
           echo "エラー:" . $e->getMessage();}
@@ -102,7 +102,7 @@ require_once('sql.php');
    try{
      $db = new PDO($dsn,$user,$password);
      $db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
-     $stmt = $db->prepare(" SELECT * FROM pile WHERE type = 'progress' OR answer is not null ");
+     $stmt = $db->prepare(" SELECT * FROM pile WHERE category = 'progress' OR answer is not null ");
      $stmt->execute();
    } catch(PDOException $e) {
        echo "エラー:" . $e->getMessage();}

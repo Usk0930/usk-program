@@ -5,7 +5,7 @@
   $tag2 = $_POST['tag2'];
   $tag3 = $_POST['tag3'];
   $memo = $_POST['memo'];
-  $type = $_POST['type'];
+  $category = $_POST['category'];
   $answer = $_POST['answer'];
   $id = $_POST['id'];
 
@@ -27,14 +27,14 @@
       $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       $stmt = $db->prepare("
-        UPDATE pile SET title = :title, language = :language, tag1 = :tag1, tag2 = :tag2, tag3 = :tag3, memo = :memo, type = :type, answer = :answer WHERE id = :id ");
+        UPDATE pile SET title = :title, language = :language, tag1 = :tag1, tag2 = :tag2, tag3 = :tag3, memo = :memo, category = :category, answer = :answer WHERE id = :id ");
         $stmt->bindParam(':title',$title,PDO::PARAM_STR);
         $stmt->bindParam(':language',$language,PDO::PARAM_STR);
         $stmt->bindParam(':tag1',$tag1,PDO::PARAM_STR);
         $stmt->bindParam(':tag2',$tag2,PDO::PARAM_STR);
         $stmt->bindParam(':tag3',$tag3,PDO::PARAM_STR);
         $stmt->bindParam(':memo',$memo,PDO::PARAM_STR);
-        $stmt->bindParam(':type',$type,PDO::PARAM_STR);
+        $stmt->bindParam(':category',$category,PDO::PARAM_STR);
         $stmt->bindParam(':answer',$answer,PDO::PARAM_STR);
         $stmt->bindParam(':id',$id,PDO::PARAM_STR);
 

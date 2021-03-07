@@ -51,16 +51,16 @@ $row=$stmt->fetch();
     <textarea name="tag3" rows='1'><?php echo $row['tag3'] ; ?></textarea></p>
    <p>REFERENCE:<input type="file" name="img"></p>
    <p>MEMO:<textarea name="memo" cols="90" rows="15" maxlength="500" wrap=”hard”  class="textarea"><?php echo $row['memo'] ?></textarea></p>
-   <p>TYPE:
-     <input type="radio" name="type" value="todo" <?php if($row['type']=='todo'){echo 'checked';}?>> To Do
-     <input type="radio" name="type" value="question" <?php if($row['type']=='question'){echo 'checked';}?>> Question
-     <input type="radio" name="type" value="progress" <?php if($row['type']=='progress'){echo 'checked';}?>>Progress
-     <input type="radio" name="type" value="test" <?php if($row['type']=='test'){echo 'checked';}?>> Test</p>
+   <p>category:
+     <input type="radio" name="category" value="todo" <?php if($row['category']=='todo'){echo 'checked';}?>> To Do
+     <input type="radio" name="category" value="question" <?php if($row['category']=='question'){echo 'checked';}?>> Question
+     <input type="radio" name="category" value="progress" <?php if($row['tycategorype']=='progress'){echo 'checked';}?>>Progress
+     <input type="radio" name="category" value="test" <?php if($row['category']=='test'){echo 'checked';}?>> Test</p>
     <input type="submit" value="POST">
     <input type="hidden" name="id" value= <?php echo $id ?> />
   </form>
 
-  <?php if ($row['type'] == 'question'):?>
+  <?php if ($row['category'] == 'question'):?>
    <br>
   <h2>ANSWER:</h2>
    <?php if ($row['answer'] !== ''):?> 

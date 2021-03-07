@@ -31,7 +31,7 @@ $row=$stmt->fetch();
 <body>
   <h1> <a href='index.php' class ='name'>USK's Way to Programer</a></h1>
   <div class='show'>
-   <h2><?php echo strtoupper($row['type']) . " : " . $row['title'] ?></h2>
+   <h2><?php echo strtoupper($row['category']) . " : " . $row['title'] ?></h2>
    <p>LANGUAGE:<?php echo $row['language']?></p>
    <p><?php if ($row['tag1'] !== '#'):?>
     TAG:<?php echo $row['tag1'] ?> <?php endif; ?>
@@ -46,7 +46,7 @@ $row=$stmt->fetch();
   </div> 
   <br>
 
-  <?php if ($row['type'] == 'question'):?>
+  <?php if ($row['category'] == 'question'):?>
   <h2>ANSWER:</h2>
    <?php if ($row['answer'] !== ''):?>
    <?php echo nl2br(htmlspecialchars($row['answer'], ENT_QUOTES, 'UTF-8')) ?> <?php endif; ?>
@@ -58,13 +58,13 @@ $row=$stmt->fetch();
     <input type="submit" value="POST">
    </form><?php endif; ?><?php endif; ?></p>
 
-  <?php if ($row['type'] == 'todo' && is_null($row['answer']) ):?>
+  <?php if ($row['category'] == 'todo' && is_null($row['answer']) ):?>
    <form action="answer.php" method="post" enctype="multipart/form-data"> 
     <input type="checkbox" name="answer" value="finished">
     <input type="hidden" name="id" value= <?php echo $id ?> >
     <input type="submit" value="Finished">
    </form></p>
-   <?php elseif ($row['type'] == 'todo' && isset($row['answer'])): ?>
+   <?php elseif ($row['category'] == 'todo' && isset($row['answer'])): ?>
    <h2>⇒Finished</h2>
    <?php endif; ?>
 
